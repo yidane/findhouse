@@ -17,15 +17,15 @@ func NewConfig() *Config {
 	}
 }
 
-func (this *Config) Load(configFilePath string) *Config {
+func (p *Config) Load(configFilePath string) *Config {
 	stream, err := ioutil.ReadFile(configFilePath)
 	if err != nil {
 		panic("read config file error :" + configFilePath + "\n")
 	}
-	this.LoadString(string(stream))
-	return this
+	p.LoadString(string(stream))
+	return p
 }
 
-func (this *Config) LoadString(configString string) error {
+func (p *Config) LoadString(configString string) error {
 	return nil
 }

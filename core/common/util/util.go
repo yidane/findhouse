@@ -16,7 +16,7 @@ func JsonpToJSON(json string) string {
 	start := strings.Index(json, "(")
 	end := strings.LastIndex(json, ")")
 	if start > -1 && end > -1 && start < end {
-		return string(json[start:end])
+		return string(json[start+1 : end])
 	}
 
 	return ""
@@ -52,8 +52,8 @@ func IsFileExists(path string) bool {
 	return !fi.IsDir()
 }
 
-//IsNumber check that string expression type is number
-func IsNumber(str string) bool {
+//IsInt check that string expression type is number
+func IsInt(str string) bool {
 	reg, _ := regexp.Compile("^\\d+$")
 	return reg.MatchString(str)
 }
