@@ -36,12 +36,13 @@ func Test_IsNumber(t *testing.T) {
 	}
 }
 
+func Test_MakeHash(t *testing.T) {
+	hash := MakeHash("123")
+	fmt.Println("123", "[", hash, "]")
+}
+
 func Benchmark_IsInt(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		IsInt("123")
 	}
-}
-
-func Test_MakeHash(t *testing.T) {
-	MakeHash("123")
 }
